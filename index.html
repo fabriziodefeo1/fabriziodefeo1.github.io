@@ -27,27 +27,7 @@ html { scroll-behavior: smooth; }
   .product-img.active .main { opacity: 0; }
 }
 </style> 
-  <style>
-/* FZIX - Ver 2 camisetas lado a lado en celular */
-@media (max-width: 768px) {
-  /* Fuerza 2 columnas en la sección COLECCIÓN */
-  h2 + div, 
-  section:has(h2) > div,
-  body > main > div,
-  body > div {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
-    gap: 12px !important;
-  }
-  /* Ajuste para que cada camiseta no ocupe todo el ancho */
-  div:has(> h3) {
-    width: 100% !important;
-  }
-  h3 {
-    font-size: 15px !important;
-  }
-}
-</style>
+ 
 </head>
 <body class="bg-black text-white font-sans">
 <header class="fixed top-0 w-full bg-black/90 backdrop-blur z-40 border-b border-gray-800">
