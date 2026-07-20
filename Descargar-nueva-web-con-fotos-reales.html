@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FZIX® | Diseño que permanece</title>
+<meta name="description" content="ACID WASH - Edición limitada 50 unidades">
+<link rel="canonical" href="https://fzix.store">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+:root { --fzix-orange: #FF6600; }
+.bg-accent { background-color: var(--fzix-orange); }
+.text-accent { color: var(--fzix-orange); }
+.hover-accent:hover { background-color: #e55a00; }
+.logo-glow { filter: drop-shadow(0 0 28px rgba(255,102,0,0.35)); }
+.section-divider { width: 60px; height: 3px; background-color: var(--fzix-orange); }
+.cart-badge { position: absolute; top: -8px; right: -8px; background: var(--fzix-orange); color: white; border-radius: 50%; width: 20px; height: 20px; font-size: 12px; display: flex; align-items: center; justify-content: center; }
+html { scroll-behavior: smooth; }
+.product-img { position: relative; background:#111; }
+.product-img .label { position: absolute; inset: 0; opacity: 0; transition: opacity 0.45s ease; }
+.product-img:hover .label { opacity: 1; }
+.product-img:hover .main { opacity: 0; }
+.product-img .main { transition: opacity 0.45s ease; }
+.size-btn.active { background: black; color: white; border-color: black; }
+@media (max-width: 768px) {
+.product-img.active .label { opacity: 1; }
+.product-img.active .main { opacity: 0; }
+}
+</style>
+</head>
+<body class="bg-black text-white font-sans">
+
+<header class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+<div class="flex items-center gap-3">
+  <img src="./img/simbolo-naranja.webp" onerror="this.src='img/simbolo-naranja.webp'" alt="FZIX®" class="h-9 w-9 logo-glow object-contain">
+  <span class="font-black tracking-[0.2em] text-[18px]">FZIX®</span>
+</div>
+<div class="flex items-center gap-6">
+  <a href="https://instagram.com/fzix.tshirt" target="_blank" class="text-2xl hover:text-accent transition"><i class="fa-brands fa-instagram"></i></a>
+  <div class="relative cursor-pointer" onclick="toggleCart()"><i class="fa-solid fa-cart-shopping text-2xl"></i><span id="cart-count" class="cart-badge hidden">0</span></div>
+</div>
+</header>
+
+<section class="pt-24 pb-28 px-4 text-center">
+<div class="max-w-4xl mx-auto">
+  <img src="./img/simbolo-naranja.webp" onerror="this.src='img/simbolo-naranja.webp'" alt="FZIX" class="h-28 mx-auto mb-10 logo-glow object-contain">
+  <h2 class="text-5xl md:text-7xl font-bold mb-6 tracking-tight leading-[0.95]">DISEÑO QUE<br>PERMANECE.</h2>
+  <div class="section-divider mx-auto mb-8"></div>
+  <p class="text-lg md:text-xl text-gray-400 mb-12 font-light max-w-2xl mx-auto leading-relaxed">Piezas esenciales hechas en Colombia.<br>Algodón premium, ediciones limitadas.</p>
+  <a href="#coleccion" class="bg-accent hover-accent text-white font-bold py-4 px-12 text-lg transition tracking-wide inline-block">VER COLECCIÓN</a>
+</div>
+</section>
+
+<section id="sobre" class="py-20 px-4 bg-[#0f1117]">
+<div class="max-w-3xl mx-auto text-center">
+<h2 class="text-3xl font-bold mb-4 tracking-wide">SOBRE FZIX®</h2>
+<div class="section-divider mx-auto mb-6"></div>
+<p class="text-gray-400 text-[11px] tracking-[0.32em] uppercase mb-8">Camisetas minimalistas</p>
+<p class="text-white text-xl md:text-2xl font-light leading-relaxed mb-10">Siluetas limpias y tonos neutros<br>para un armario atemporal.</p>
+<div class="section-divider mx-auto mb-10"></div>
+<p class="text-white text-sm md:text-[13px] font-bold tracking-[0.28em] uppercase">MENOS RUIDO. MÁS IDENTIDAD</p>
+</div>
+</section>
+
+<!-- COLECCION -->
+<section id="coleccion" class="py-24 px-4 bg-white text-black">
+<div class="max-w-5xl mx-auto">
+<h2 class="text-4xl font-bold text-center mb-3 tracking-tight">COLECCIÓN</h2>
+<p class="text-center text-sm text-gray-500 mb-12 tracking-widest uppercase">Toca la imagen para ver el detalle</p>
+<div class="section-divider mx-auto mb-16"></div>
+
+<div class="grid grid-cols-1 max-w-[420px] mx-auto">
+  <div class="bg-gray-50 p-6 group border border-black/5">
+    <div class="aspect-[4/5] overflow-hidden bg-neutral-900 product-img cursor-pointer" onclick="toggleLabel(this)">
+      <img src="./img/fzix-washed-frente.webp" onerror="this.src='img/fzix-washed-frente.webp'" alt="ACID WASH - Frente" class="main w-full h-full object-cover">
+      <img src="./img/fzix-washed-espalda.webp" onerror="this.src='img/fzix-washed-espalda.webp'" alt="ACID WASH - Espalda" class="label w-full h-full object-cover">
+    </div>
+    <div class="bg-white pt-5 pb-1 text-center">
+      <h3 class="font-bold text-[17px] tracking-wide uppercase leading-none">ACID WASH</h3>
+      <p class="text-[11px] text-gray-500 tracking-[0.22em] uppercase mt-2">S / M / L / XL</p>
+    </div>
+    <p class="text-center text-[22px] font-bold text-accent mt-3 mb-5">$89.900 COP</p>
+    <div class="mb-1">
+      <p class="text-[10px] tracking-[0.25em] text-gray-500 mb-3 font-bold text-center uppercase">Elige tu talla:</p>
+      <div class="flex gap-2">
+        <button onclick="selectSize(this, 'ACID WASH', 89900, 'S')" class="size-btn flex-1 border-2 border-black py-2.5 bg-white hover:bg-black hover:text-white transition text-sm font-bold">S</button>
+        <button onclick="selectSize(this, 'ACID WASH', 89900, 'M')" class="size-btn flex-1 border-2 border-black py-2.5 bg-white hover:bg-black hover:text-white transition text-sm font-bold">M</button>
+        <button onclick="selectSize(this, 'ACID WASH', 89900, 'L')" class="size-btn flex-1 border-2 border-black py-2.5 bg-white hover:bg-black hover:text-white transition text-sm font-bold">L</button>
+        <button onclick="selectSize(this, 'ACID WASH', 89900, 'XL')" class="size-btn flex-1 border-2 border-black py-2.5 bg-white hover:bg-black hover:text-white transition text-sm font-bold">XL</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+
+<!-- NUEVA SECCIÓN: EN LA VIDA REAL - TUS FOTOS -->
+<section id="real" class="py-24 px-4 bg-[#0a0a0a] text-white">
+<div class="max-w-6xl mx-auto">
+  <div class="text-center mb-16">
+    <p class="text-accent text-[11px] tracking-[0.35em] uppercase font-bold mb-4">FOTO REAL • SIN FILTROS</p>
+    <h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">EN LA VIDA REAL</h2>
+    <div class="section-divider mx-auto mb-6"></div>
+    <p class="text-gray-400 max-w-xl mx-auto">Así se ve ACID WASH puesta. Fit oversize real, caída pesada de 240 GSM. Fotos sin estudio, luz natural.</p>
+  </div>
+
+  <!-- Grid de tus 5 fotos reales mejoradas -->
+  <div class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+    <!-- Foto 1 - Grande destacada -->
+    <div class="col-span-2 md:col-span-2 md:row-span-2 aspect-[4/5] md:aspect-auto overflow-hidden bg-neutral-900 group cursor-pointer">
+      <img src="./img/fzix-real-01.webp" alt="FZIX ACID WASH puesta - Vista frontal" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+    </div>
+    <!-- Foto 2 -->
+    <div class="aspect-[3/4] overflow-hidden bg-neutral-900 group cursor-pointer">
+      <img src="./img/fzix-real-02.webp" alt="Detalle logo naranja" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+    </div>
+    <!-- Foto 3 -->
+    <div class="aspect-[3/4] overflow-hidden bg-neutral-900 group cursor-pointer">
+      <img src="./img/fzix-real-03.webp" alt="Fit oversize" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+    </div>
+    <!-- Foto 4 -->
+    <div class="aspect-[4/5] overflow-hidden bg-neutral-900 group cursor-pointer">
+      <img src="./img/fzix-real-04.webp" alt="Textura acid wash" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+    </div>
+    <!-- Foto 5 -->
+    <div class="aspect-[4/5] overflow-hidden bg-neutral-900 group cursor-pointer">
+      <img src="./img/fzix-real-05.webp" alt="Caída premium" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+    </div>
+    <!-- CTA Card -->
+    <div class="aspect-[4/5] bg-accent p-6 flex flex-col justify-center text-black">
+      <p class="text-[11px] tracking-[0.3em] uppercase font-bold mb-3 opacity-70">EDICIÓN 01 / 50</p>
+      <h3 class="text-3xl font-black leading-[0.9] mb-4">CADA<br>MANCHA<br>ES ÚNICA.</h3>
+      <p class="text-sm mb-6 font-medium">Ningún patrón se repite. Cuando se acaba, no vuelve igual.</p>
+      <a href="#coleccion" class="bg-black text-white text-center py-3 font-bold text-sm tracking-wide hover:bg-zinc-900 transition">COMPRAR AHORA →</a>
+    </div>
+  </div>
+
+  <div class="mt-12 text-center">
+    <p class="text-[11px] text-gray-500 tracking-widest uppercase">Modelo: 1.78m • Talla L • Fotos con iPhone, luz natural</p>
+  </div>
+</div>
+</section>
+
+<section class="py-14 px-4 bg-[#0f1117]">
+<div class="max-w-4xl mx-auto grid md:grid-cols-3 gap-8 text-center">
+<div><i class="fa-solid fa-truck-fast text-3xl text-accent mb-3"></i><h3 class="font-bold text-sm tracking-widest mb-1">ENVÍO NACIONAL</h3><p class="text-gray-400 text-sm">$12.000 COP | 2 prendas envío GRATIS</p></div>
+<div><i class="fa-solid fa-hand-holding-dollar text-3xl text-accent mb-3"></i><h3 class="font-bold text-sm tracking-widest mb-1">CONTRAENTREGA</h3><p class="text-gray-400 text-sm">Disponible en Cali</p></div>
+<div><i class="fa-solid fa-credit-card text-3xl text-accent mb-3"></i><h3 class="font-bold text-sm tracking-widest mb-1">PAGOS</h3><p class="text-gray-400 text-sm">Nequi y Transferencia</p></div>
+</div>
+</section>
+
+<footer class="text-center py-8 bg-black">
+<p class="text-gray-400 text-sm tracking-wide mb-2">© 2026 FZIX®. Todos los derechos reservados.</p>
+<a href="https://instagram.com/fzix.tshirt" target="_blank" class="text-accent text-sm tracking-widest uppercase hover:underline">@fzix.tshirt • Hecho en Colombia</a>
+</footer>
+
+<div id="cart-modal" class="hidden fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4">
+<div class="bg-white text-black max-w-lg w-full p-7">
+<div class="flex justify-between items-center mb-6"><h3 class="text-xl font-bold tracking-wider">TU CARRITO</h3><button onclick="toggleCart()" class="text-3xl leading-none">&times;</button></div>
+<div id="cart-items" class="mb-6"></div>
+<div class="border-t pt-5"><div class="flex justify-between text-sm text-gray-500 mb-2"><span>Subtotal:</span><span id="cart-subtotal">$0 COP</span></div><div class="flex justify-between text-sm text-gray-500 mb-4"><span>Envío:</span><span id="cart-shipping">$12.000 COP</span></div><div class="flex justify-between text-lg font-bold mb-5"><span>TOTAL:</span><span id="cart-total">$0 COP</span></div><button onclick="checkout()" class="w-full bg-accent hover-accent text-white font-bold py-4 transition tracking-wide">FINALIZAR POR WHATSAPP</button></div>
+</div>
+</div>
+
+<script>
+let cart=[];const whatsappNumber='573007402006',shippingCost=12000,freeShippingThreshold=179800;
+function formatPrice(n){return '$'+n.toLocaleString('es-CO')+' COP'}
+function addToCart(name,price,size){const ex=cart.find(i=>i.name===name&&i.size===size);if(ex)ex.qty++;else cart.push({name,price,size,qty:1});updateCartUI();const b=document.getElementById('cart-count');b.classList.add('animate-pulse');setTimeout(()=>b.classList.remove('animate-pulse'),400)}
+function selectSize(btn,name,price,size){
+  document.querySelectorAll('.size-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  addToCart(name,price,size);
+  toggleCart();
+}
+function updateCartUI(){const c=cart.reduce((s,i)=>s+i.qty,0),badge=document.getElementById('cart-count');badge.textContent=c;badge.classList.toggle('hidden',c===0);const d=document.getElementById('cart-items');d.innerHTML=c===0?'<p class="text-gray-500 text-center py-8 text-sm">Tu carrito está vacío</p>':cart.map((it,idx)=>`<div class="flex justify-between py-3 border-b text-sm"><div><p class="font-bold">${it.name}</p><p class="text-gray-500">Talla ${it.size} x${it.qty}</p></div><div class="text-right"><p class="font-bold">${formatPrice(it.price*it.qty)}</p><button onclick="removeFromCart(${idx})" class="text-red-500 text-xs">Eliminar</button></div></div>`).join('');const sub=cart.reduce((s,i)=>s+i.price*i.qty,0),ship=sub>=freeShippingThreshold?0:(cart.length?shippingCost:0);document.getElementById('cart-subtotal').textContent=formatPrice(sub);document.getElementById('cart-shipping').textContent=ship===0?'GRATIS':formatPrice(ship);document.getElementById('cart-total').textContent=formatPrice(sub+ship)}
+function removeFromCart(i){cart.splice(i,1);updateCartUI()}function toggleCart(){document.getElementById('cart-modal').classList.toggle('hidden')}
+function checkout(){if(!cart.length)return;let m='Hola FZIX®! Quiero este pedido:%0A%0A';cart.forEach(i=>{m+=`• ${i.name} - Talla ${i.size} x${i.qty} = ${formatPrice(i.price*i.qty)}%0A`});const sub=cart.reduce((s,i)=>s+i.price*i.qty,0),ship=sub>=freeShippingThreshold?0:shippingCost;m+=`%0ASubtotal: ${formatPrice(sub)}%0AEnvío: ${ship===0?'GRATIS':formatPrice(ship)}%0A*TOTAL: ${formatPrice(sub+ship)}*%0A%0AMi nombre es:%0AMi ciudad es:%0AMi dirección es:`;window.open(`https://wa.me/${whatsappNumber}?text=${m}`,'_blank')}
+function toggleLabel(el){el.classList.toggle('active')}
+</script>
+</body>
+</html>
