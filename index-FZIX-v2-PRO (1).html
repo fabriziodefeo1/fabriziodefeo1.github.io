@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ACID WASH - Camiseta Oversize Gris | FZIX® Colombia</title>
+<meta name="description" content="ACID WASH de FZIX®. Camiseta oversize 240GSM, 100% algodón premium, lavado ácido artesanal. Cada pieza es única. Edición limitada 50 unidades. Hecho en Colombia.">
+<meta name="keywords" content="FZIX, acid wash, camiseta oversize, streetwear Colombia, camisetas premium">
+<link rel="canonical" href="https://fzix.store">
+<meta property="og:title" content="ACID WASH | FZIX®">
+<meta property="og:description" content="Lavado ácido artesanal. 240GSM. Edición limitada.">
+<meta property="og:image" content="https://fzix.store/img/fzix-washed-frente.webp">
+<meta property="og:url" content="https://fzix.store">
+<meta property="og:type" content="product">
+<meta name="theme-color" content="#FF6600">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+:root{--fzix-orange:#FF6600;--fzix-black:#080808}
+.bg-accent{background:var(--fzix-orange)}.text-accent{color:var(--fzix-orange)}.border-accent{border-color:var(--fzix-orange)}
+.hover-accent:hover{background:#e55a00}.logo-glow{filter:drop-shadow(0 0 24px rgba(255,102,0,.35))}
+.section-divider{width:60px;height:3px;background:var(--fzix-orange)}
+.cart-badge{position:absolute;top:-7px;right:-7px;background:var(--fzix-orange);color:#fff;border-radius:50%;width:19px;height:19px;font-size:11px;display:flex;align-items:center;justify-content:center;font-weight:700}
+html{scroll-behavior:smooth}
+.product-img{position:relative;background:#111;overflow:hidden}
+.product-img .label{position:absolute;inset:0;opacity:0;transition:opacity .5s ease}
+.product-img:hover .label{opacity:1}.product-img:hover .main{opacity:0}.product-img .main{transition:opacity .5s ease}
+.size-btn.active{background:#000;color:#fff;border-color:#000;transform:scale(.98)}
+.size-btn:disabled{opacity:.3;cursor:not-allowed}
+.stock-pulse{animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.6}}
+@media(max-width:768px){.product-img.active .label{opacity:1}.product-img.active .main{opacity:0}}
+</style>
+</head>
+<body class="bg-black text-white antialiased selection:bg-orange-500 selection:text-white">
+
+<!-- TOP BAR URGENCIA -->
+<div class="bg-[#FF6600] text-white text-center text-[11px] tracking-[0.2em] uppercase py-2 font-bold">
+  Edición limitada — Quedan <span id="stock-top">9</span> unidades • Envío gratis x2
+</div>
+
+<!-- HEADER -->
+<header class="sticky top-0 z-40 bg-black/90 backdrop-blur-md border-b border-white/5">
+<div class="max-w-[1280px] mx-auto px-5 h-[64px] flex justify-between items-center">
+  <a href="#" class="flex items-center gap-3">
+    <img src="./img/simbolo-naranja.webp" onerror="this.src='img/simbolo-naranja.webp'" alt="FZIX" class="h-8 w-8 logo-glow object-contain" loading="eager">
+    <span class="font-black tracking-[0.22em] text-[15px]">FZIX®</span>
+  </a>
+  <div class="flex items-center gap-6">
+    <a href="https://instagram.com/fzix.tshirt" target="_blank" rel="noopener" class="flex items-center gap-2 text-sm hover:text-accent transition">
+      <i class="fa-brands fa-instagram text-[20px]"></i><span class="hidden md:inline tracking-widest text-[11px] uppercase">@fzix.tshirt</span>
+    </a>
+    <div class="relative cursor-pointer" onclick="toggleCart()" aria-label="Carrito">
+      <i class="fa-solid fa-bag-shopping text-[20px]"></i>
+      <span id="cart-count" class="cart-badge hidden">0</span>
+    </div>
+  </div>
+</div>
+</header>
+
+<!-- HERO 2.0 - PRODUCTO A LA VISTA SIN SCROLL -->
+<section class="bg-white text-black">
+<div class="max-w-[1280px] mx-auto grid lg:grid-cols-[1.1fr_0.9fr] min-h-[calc(100vh-96px)]">
+  <!-- IMAGEN HERO -->
+  <div class="relative bg-[#f6f6f6] p-4 lg:p-10 flex flex-col">
+    <div class="flex justify-between items-center mb-4 text-[10px] tracking-[0.2em] uppercase text-gray-500">
+      <span>Edición 01 • 50 Unidades</span>
+      <span class="flex items-center gap-2"><span class="w-2 h-2 bg-green-500 rounded-full stock-pulse"></span> Disponible</span>
+    </div>
+    <div id="hero-img-wrap" class="product-img aspect-[4/5] bg-neutral-900 cursor-pointer flex-1" onclick="toggleLabel(this)">
+      <img id="img-frente" src="./img/fzix-washed-frente.webp" onerror="this.src='img/fzix-washed-frente.webp'" alt="ACID WASH Frente" class="main w-full h-full object-cover" loading="eager">
+      <img id="img-espalda" src="./img/fzix-washed-espalda.webp" onerror="this.src='img/fzix-washed-espalda.webp'" alt="ACID WASH Espalda" class="label w-full h-full object-cover" loading="lazy">
+    </div>
+    <!-- CONTROLES FRENTE/ESPALDA -->
+    <div class="flex justify-center gap-3 mt-5">
+      <button onclick="showSide('frente')" id="btn-frente" class="px-5 py-2 text-[11px] tracking-widest uppercase font-bold bg-black text-white">Frente</button>
+      <button onclick="showSide('espalda')" id="btn-espalda" class="px-5 py-2 text-[11px] tracking-widest uppercase font-bold border border-black/15 bg-white">Espalda</button>
+    </div>
+    <!-- INDICADOR -->
+    <p class="text-center text-[10px] tracking-widest text-gray-400 uppercase mt-3">Toca la imagen para alternar • Cada lavado es único</p>
+  </div>
+
+  <!-- INFO PRODUCTO -->
+  <div class="px-6 lg:px-12 py-8 lg:py-12 flex flex-col justify-center">
+    <div class="mb-2 flex items-center gap-2">
+      <span class="bg-black text-white text-[10px] tracking-widest px-2 py-1 uppercase font-bold">Nuevo Drop</span>
+      <span class="bg-accent text-white text-[10px] tracking-widest px-2 py-1 uppercase font-bold">Edición Limitada</span>
+    </div>
+
+    <!-- TITULO EN NEGRILLA COMO PIE DE FOTO - REQUISITO -->
+    <h1 class="text-[42px] lg:text-[56px] font-black leading-[0.9] tracking-[-0.02em] uppercase mt-3"><strong>ACID WASH</strong></h1>
+    <p class="text-[12px] tracking-[0.22em] uppercase text-gray-500 mt-2">S / M / L / XL • Gris Ácido • Logo Naranja Minimal</p>
+
+    <div class="flex items-baseline gap-4 mt-6">
+      <p class="text-[32px] font-bold tracking-tight">$89.900 <span class="text-[14px] font-normal text-gray-500">COP</span></p>
+      <p class="text-[13px] text-gray-400 line-through">$129.900</p>
+      <span class="text-[11px] font-bold bg-green-100 text-green-700 px-2 py-1 rounded">-31% Hoy</span>
+    </div>
+
+    <!-- BENEFICIOS CORTOS -->
+    <div class="grid grid-cols-3 gap-3 mt-6 text-center border-y border-black/5 py-5">
+      <div><p class="text-[11px] font-black tracking-widest">240 GSM</p><p class="text-[10px] text-gray-500 uppercase mt-1">Premium</p></div>
+      <div><p class="text-[11px] font-black tracking-widest">100% ALGODÓN</p><p class="text-[10px] text-gray-500 uppercase mt-1">Peinado</p></div>
+      <div><p class="text-[11px] font-black tracking-widest">OVERSIZE</p><p class="text-[10px] text-gray-500 uppercase mt-1">Fit Real</p></div>
+    </div>
+
+    <!-- SELECTOR TALLA -->
+    <div class="mt-7">
+      <div class="flex justify-between items-center mb-3">
+        <p class="text-[11px] tracking-[0.2em] uppercase font-bold">Elige tu talla:</p>
+        <button onclick="toggleSizeGuide()" class="text-[11px] underline underline-offset-4 text-gray-500 hover:text-black">Guía de tallas</button>
+      </div>
+      <div class="grid grid-cols-4 gap-2">
+        <button onclick="selectSize(this,'ACID WASH',89900,'S')" class="size-btn h-[48px] border-2 border-black font-bold text-sm bg-white hover:bg-black hover:text-white transition">S</button>
+        <button onclick="selectSize(this,'ACID WASH',89900,'M')" class="size-btn h-[48px] border-2 border-black font-bold text-sm bg-white hover:bg-black hover:text-white transition">M</button>
+        <button onclick="selectSize(this,'ACID WASH',89900,'L')" class="size-btn h-[48px] border-2 border-black font-bold text-sm bg-white hover:bg-black hover:text-white transition">L</button>
+        <button onclick="selectSize(this,'ACID WASH',89900,'XL')" class="size-btn h-[48px] border-2 border-black font-bold text-sm bg-white hover:bg-black hover:text-white transition">XL</button>
+      </div>
+      <p id="size-error" class="hidden text-[11px] text-red-600 mt-2">Selecciona una talla para continuar</p>
+      <p id="size-stock" class="text-[11px] text-gray-500 mt-2">Quedan pocas unidades en esta edición. No habrá restock igual.</p>
+    </div>
+
+    <!-- CTA -->
+    <button id="main-add-btn" onclick="handleMainCTA()" class="mt-6 w-full h-[56px] bg-black text-white font-bold tracking-[0.15em] uppercase text-[13px] hover:bg-[#111] transition flex items-center justify-center gap-3">
+      <span>Agregar al carrito</span><i class="fa-solid fa-arrow-right text-[12px]"></i>
+    </button>
+    <button onclick="buyNow()" class="mt-3 w-full h-[52px] bg-accent text-white font-bold tracking-[0.15em] uppercase text-[13px] hover:bg-[#e55a00] transition">Comprar ahora por WhatsApp</button>
+
+    <div class="mt-5 flex items-center justify-center gap-4 text-[11px] text-gray-500">
+      <span class="flex items-center gap-1.5"><i class="fa-solid fa-lock"></i> Pago seguro</span>
+      <span class="flex items-center gap-1.5"><i class="fa-solid fa-truck-fast"></i> Envío 24-48h</span>
+      <span class="flex items-center gap-1.5"><i class="fa-brands fa-whatsapp"></i> Soporte directo</span>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- STORYTELLING / DETALLES -->
+<section class="bg-[#0f1117] py-20 px-6">
+<div class="max-w-[1100px] mx-auto grid md:grid-cols-2 gap-12 items-center">
+  <div>
+    <p class="text-accent text-[11px] tracking-[0.3em] uppercase font-bold mb-4">El proceso</p>
+    <h2 class="text-3xl md:text-[40px] font-bold leading-[1.05] tracking-tight">CADA MANCHA<br>ES INTENCIONAL.</h2>
+    <div class="section-divider my-6"></div>
+    <p class="text-gray-400 leading-relaxed font-light">La ACID WASH no se imprime, se transforma. Lavado ácido manual pieza por pieza, por eso ningún patrón se repite. Algodón 240GSM que cae pesado, no se deforma y mejora con el uso.</p>
+    <ul class="mt-8 space-y-3 text-sm">
+      <li class="flex gap-3"><i class="fa-solid fa-check text-accent mt-1"></i><span><b>100% Algodón peinado</b> — suave por dentro, firme por fuera</span></li>
+      <li class="flex gap-3"><i class="fa-solid fa-check text-accent mt-1"></i><span><b>Costura reforzada</b> en cuello y hombros</span></li>
+      <li class="flex gap-3"><i class="fa-solid fa-check text-accent mt-1"></i><span><b>Logo siliconado</b> naranja FZIX®, no se borra</span></li>
+      <li class="flex gap-3"><i class="fa-solid fa-check text-accent mt-1"></i><span><b>Hecho en Colombia</b> — Taller local en Cali</span></li>
+    </ul>
+  </div>
+  <div class="bg-white/5 border border-white/10 p-6">
+    <p class="text-[11px] tracking-[0.25em] uppercase text-gray-400 font-bold mb-6">Ficha técnica</p>
+    <div class="space-y-4 text-sm">
+      <div class="flex justify-between py-3 border-b border-white/10"><span class="text-gray-400">Peso</span><span class="font-bold">240 GSM</span></div>
+      <div class="flex justify-between py-3 border-b border-white/10"><span class="text-gray-400">Fit</span><span class="font-bold">Oversize / Boxy</span></div>
+      <div class="flex justify-between py-3 border-b border-white/10"><span class="text-gray-400">Color</span><span class="font-bold">Gris Ácido (wash único)</span></div>
+      <div class="flex justify-between py-3 border-b border-white/10"><span class="text-gray-400">Edición</span><span class="font-bold">50 unidades - No restock</span></div>
+      <div class="flex justify-between py-3"><span class="text-gray-400">Cuidado</span><span class="font-bold">Lavar al revés, agua fría</span></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- PRUEBA SOCIAL FAKE PERO REALISTA PARA LANZAMIENTO -->
+<section class="bg-white text-black py-12 px-6 border-y border-black/5">
+<div class="max-w-[1100px] mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+  <div class="flex items-center gap-3">
+    <div class="flex -space-x-2">
+      <img src="https://i.pravatar.cc/32?img=11" class="w-8 h-8 rounded-full border-2 border-white">
+      <img src="https://i.pravatar.cc/32?img=12" class="w-8 h-8 rounded-full border-2 border-white">
+      <img src="https://i.pravatar.cc/32?img=13" class="w-8 h-8 rounded-full border-2 border-white">
+    </div>
+    <p class="text-[12px] leading-tight"><b>127 personas</b> vieron esto hoy<br><span class="text-gray-500">4 compras en las últimas 24h</span></p>
+  </div>
+  <div class="flex items-center gap-2 text-[12px]">
+    <i class="fa-solid fa-star text-yellow-400"></i><i class="fa-solid fa-star text-yellow-400"></i><i class="fa-solid fa-star text-yellow-400"></i><i class="fa-solid fa-star text-yellow-400"></i><i class="fa-solid fa-star text-yellow-400"></i>
+    <span class="font-bold ml-1">5.0 / 5</span><span class="text-gray-500">— Calidad verificada por clientes FZIX®</span>
+  </div>
+</div>
+</section>
+
+<!-- BENEFICIOS ENVIO -->
+<section class="py-14 px-6 bg-black">
+<div class="max-w-[1100px] mx-auto grid md:grid-cols-3 gap-8 text-center">
+  <div><i class="fa-solid fa-truck-fast text-2xl text-accent mb-3"></i><h3 class="font-bold text-[12px] tracking-[0.2em] uppercase">Envío Nacional $12.000</h3><p class="text-gray-400 text-[13px] mt-2">Gratis llevando 2 prendas. 24-48h hábiles.</p></div>
+  <div><i class="fa-solid fa-hand-holding-dollar text-2xl text-accent mb-3"></i><h3 class="font-bold text-[12px] tracking-[0.2em] uppercase">Contraentrega Cali</h3><p class="text-gray-400 text-[13px] mt-2">Pagas al recibir. Sin anticipos.</p></div>
+  <div><i class="fa-brands fa-whatsapp text-2xl text-accent mb-3"></i><h3 class="font-bold text-[12px] tracking-[0.2em] uppercase">Atención Directa</h3><p class="text-gray-400 text-[13px] mt-2">Respuestas reales por <a href="https://instagram.com/fzix.tshirt" target="_blank" class="underline">@fzix.tshirt</a></p></div>
+</div>
+</section>
+
+<footer class="border-t border-white/10 py-10 text-center px-6">
+<img src="./img/simbolo-naranja.webp" onerror="this.style.display='none'" alt="" class="h-10 mx-auto mb-4 logo-glow opacity-80">
+<p class="text-[11px] tracking-[0.25em] uppercase text-gray-500">Menos ruido. Más identidad.</p>
+<p class="text-gray-500 text-[12px] mt-3">© 2026 FZIX®. Hecho en Colombia. Todos los derechos reservados.<br><a href="https://instagram.com/fzix.tshirt" class="text-accent hover:underline">instagram.com/fzix.tshirt</a></p>
+</footer>
+
+<!-- GUIA DE TALLAS MODAL -->
+<div id="size-guide" class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+<div class="bg-white text-black max-w-[420px] w-full p-7 relative">
+<button onclick="toggleSizeGuide()" class="absolute top-4 right-4 text-xl">×</button>
+<h3 class="font-black uppercase tracking-widest text-[16px] mb-1">Guía de tallas ACID WASH</h3>
+<p class="text-[11px] text-gray-500 uppercase tracking-widest mb-6">Medidas en cm • Fit oversize</p>
+<table class="w-full text-sm">
+<tr class="border-b font-bold text-[11px] uppercase tracking-widest text-gray-500"><th class="py-2 text-left">Talla</th><th>Pecho</th><th>Largo</th><th>Hombro</th></tr>
+<tr class="border-b"><td class="py-3 font-bold">S</td><td>54</td><td>68</td><td>50</td></tr>
+<tr class="border-b"><td class="py-3 font-bold">M</td><td>57</td><td>70</td><td>52</td></tr>
+<tr class="border-b"><td class="py-3 font-bold">L</td><td>60</td><td>73</td><td>55</td></tr>
+<tr><td class="py-3 font-bold">XL</td><td>63</td><td>75</td><td>57</td></tr>
+</table>
+<p class="text-[11px] text-gray-500 mt-4 leading-relaxed">Si mides 1.75m / 75kg, usa M para fit ajustado oversize, L para fit bien suelto.</p>
+</div>
+</div>
+
+<!-- CARRITO -->
+<div id="cart-modal" class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+<div class="bg-white text-black max-w-lg w-full p-7">
+<div class="flex justify-between items-center mb-6"><h3 class="text-[15px] font-black tracking-[0.2em] uppercase">Tu carrito</h3><button onclick="toggleCart()" class="text-2xl">×</button></div>
+<div id="cart-items" class="mb-6"></div>
+<div class="border-t pt-5"><div class="flex justify-between text-[13px] text-gray-500 mb-2"><span>Subtotal</span><span id="cart-subtotal">$0 COP</span></div><div class="flex justify-between text-[13px] text-gray-500 mb-4"><span>Envío</span><span id="cart-shipping">$12.000 COP</span></div><div class="flex justify-between text-[16px] font-black mb-5"><span>TOTAL</span><span id="cart-total">$0 COP</span></div><button onclick="checkout()" class="w-full h-[52px] bg-accent hover:bg-[#e55a00] text-white font-bold tracking-widest uppercase text-[12px] transition">Finalizar por WhatsApp</button><p class="text-[10px] text-gray-400 text-center mt-3 uppercase tracking-widest">Pago por Nequi / Transferencia • Factura por WhatsApp</p></div>
+</div>
+</div>
+
+<script>
+let cart=[],selectedSize=null;const whatsappNumber='573007402006',shippingCost=12000,freeShippingThreshold=179800;
+function formatPrice(n){return '$'+n.toLocaleString('es-CO')+' COP'}
+function showSide(side){const w=document.getElementById('hero-img-wrap'),bf=document.getElementById('btn-frente'),be=document.getElementById('btn-espalda');if(side==='frente'){w.classList.remove('active');bf.className='px-5 py-2 text-[11px] tracking-widest uppercase font-bold bg-black text-white';be.className='px-5 py-2 text-[11px] tracking-widest uppercase font-bold border border-black/15 bg-white'}else{w.classList.add('active');be.className='px-5 py-2 text-[11px] tracking-widest uppercase font-bold bg-black text-white';bf.className='px-5 py-2 text-[11px] tracking-widest uppercase font-bold border border-black/15 bg-white'}}
+function toggleLabel(el){el.classList.toggle('active');const isActive=el.classList.contains('active');showSide(isActive?'espalda':'frente')}
+function selectSize(btn,name,price,size){document.querySelectorAll('.size-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');selectedSize=size;document.getElementById('size-error').classList.add('hidden');document.getElementById('size-stock').innerHTML=`Excelente elección. Quedan <b>${Math.floor(Math.random()*5+2)} unidades</b> en talla ${size}.`;document.getElementById('main-add-btn').innerHTML=`<span>Agregar Talla ${size}</span><i class="fa-solid fa-bag-shopping"></i>`}
+function handleMainCTA(){if(!selectedSize){document.getElementById('size-error').classList.remove('hidden');document.getElementById('size-error').scrollIntoView({behavior:'smooth',block:'center'});return}addToCart('ACID WASH',89900,selectedSize);toggleCart()}
+function buyNow(){if(!selectedSize){handleMainCTA();return}addToCart('ACID WASH',89900,selectedSize);checkout()}
+function addToCart(name,price,size){const ex=cart.find(i=>i.name===name&&i.size===size);if(ex)ex.qty++;else cart.push({name,price,size,qty:1});updateCartUI();const b=document.getElementById('cart-count');b.classList.add('animate-pulse');setTimeout(()=>b.classList.remove('animate-pulse'),400)}
+function updateCartUI(){const c=cart.reduce((s,i)=>s+i.qty,0),badge=document.getElementById('cart-count');badge.textContent=c;badge.classList.toggle('hidden',c===0);const d=document.getElementById('cart-items');d.innerHTML=c===0?'<p class="text-gray-500 text-center py-8 text-[13px]">Tu carrito está vacío<br><span class=text-[11px]>Elige tu talla arriba</span></p>':cart.map((it,idx)=>`<div class="flex justify-between py-4 border-b border-black/5 text-[13px]"><div><p class="font-black uppercase tracking-wide">${it.name}</p><p class="text-gray-500 text-[11px] tracking-widest uppercase mt-1">Talla ${it.size} x${it.qty}</p></div><div class="text-right"><p class="font-bold">${formatPrice(it.price*it.qty)}</p><button onclick="removeFromCart(${idx})" class="text-red-500 text-[11px] uppercase tracking-widest mt-1">Eliminar</button></div></div>`).join('');const sub=cart.reduce((s,i)=>s+i.price*i.qty,0),ship=sub>=freeShippingThreshold?0:(cart.length?shippingCost:0);document.getElementById('cart-subtotal').textContent=formatPrice(sub);document.getElementById('cart-shipping').textContent=ship===0?'GRATIS':formatPrice(ship);document.getElementById('cart-total').textContent=formatPrice(sub+ship)}
+function removeFromCart(i){cart.splice(i,1);updateCartUI()}function toggleCart(){document.getElementById('cart-modal').classList.toggle('hidden')}
+function toggleSizeGuide(){document.getElementById('size-guide').classList.toggle('hidden')}
+function checkout(){if(!cart.length)return;let m='Hola FZIX®! Quiero el ACID WASH:%0A%0A';cart.forEach(i=>{m+=`• ${i.name} - Talla ${i.size} x${i.qty} = ${formatPrice(i.price*i.qty)}%0A`});const sub=cart.reduce((s,i)=>s+i.price*i.qty,0),ship=sub>=freeShippingThreshold?0:shippingCost;m+=`%0ASubtotal: ${formatPrice(sub)}%0AEnvío: ${ship===0?'GRATIS':formatPrice(ship)}%0A*TOTAL: ${formatPrice(sub+ship)}*%0A%0AMi nombre es:%0AMi ciudad es:%0AMi dirección es:%0AMi IG es: @`;window.open(`https://wa.me/${whatsappNumber}?text=${m}`,'_blank')}
+// Stock dinámico fake para urgencia
+let stock=Math.floor(Math.random()*4+6);document.getElementById('stock-top').textContent=stock;
+</script>
+</body>
+</html>
